@@ -1,0 +1,31 @@
+{
+  "name": "copy-folder-path",
+  "displayName": "Copy Folder Path",
+  "description": "Copy the current workspace folder's absolute path to clipboard from the status bar",
+  "version": "0.1.0",
+  "publisher": "bedong",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copy-folder-path.copy",
+        "title": "Copy Folder Path: Copy Workspace Path"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npm run compile && vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.4.0"
+  }
+}
