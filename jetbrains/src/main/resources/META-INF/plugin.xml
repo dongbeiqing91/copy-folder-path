@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>com.bedong.copyfolderpath</id>
+    <name>Copy Folder Path</name>
+    <vendor>bedong</vendor>
+
+    <description><![CDATA[
+        Adds a status bar button in the bottom-right corner of the IDE.<br/>
+        Click it to copy the current project's absolute path to the clipboard.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="Copy Folder Path" displayType="BALLOON" isLogByDefault="false"/>
+        <statusBarWidgetFactory
+            implementation="com.bedong.copyfolderpath.CopyFolderPathWidgetFactory"
+            id="CopyFolderPathWidget"
+            order="last"/>
+    </extensions>
+</idea-plugin>

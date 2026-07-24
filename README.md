@@ -1,6 +1,6 @@
 # Copy Folder Path
 
-A lightweight VS Code / Cursor extension that adds a status bar button for copying the current workspace folder's absolute path to the clipboard.
+A lightweight extension/plugin that adds a status bar button for copying the current project folder's absolute path to the clipboard. Available for **VS Code / Cursor** and **JetBrains IDEs**.
 
 ## Features
 
@@ -10,11 +10,15 @@ A lightweight VS Code / Cursor extension that adds a status bar button for copyi
 - **Hover tooltip** — hovering over the status bar item shows the path of the first workspace folder (`Copy: /absolute/path`), or `No folder open` when no folder is loaded.
 - **Command Palette** — the same action is available via `Copy Folder Path: Copy Workspace Path` (command ID: `copy-folder-path.copy`).
 
-## Requirements
+---
+
+## VS Code / Cursor
+
+### Requirements
 
 VS Code 1.75.0 or later (or any compatible Cursor build).
 
-## Installation
+### Installation
 
 Install from the pre-built `.vsix` file:
 
@@ -26,11 +30,13 @@ Or install from the terminal:
 
 ```bash
 code --install-extension copy-folder-path-0.1.0.vsix
+# Cursor
+cursor --install-extension copy-folder-path-0.1.0.vsix
 ```
 
-## Usage
+### Usage
 
-Once installed, the `$(folder) Copy Path` button appears in the status bar (bottom right).
+Once installed, the `📁 Copy Path` button appears in the status bar (bottom right).
 
 | Scenario | Result |
 |---|---|
@@ -40,7 +46,7 @@ Once installed, the `$(folder) Copy Path` button appears in the status bar (bott
 
 The copied value is the absolute filesystem path (`uri.fsPath`) of the selected folder.
 
-## Development
+### Development
 
 ```bash
 # Install dependencies
@@ -57,6 +63,43 @@ npm run package
 ```
 
 The compiled output lands in `out/`. The entry point is `src/extension.ts`.
+
+---
+
+## JetBrains IDEs
+
+Supports IntelliJ IDEA, WebStorm, PyCharm, GoLand, and any other IntelliJ-based IDE 2024.1+.
+
+### Installation
+
+Build the plugin and install from disk:
+
+```bash
+cd jetbrains
+./gradlew buildPlugin
+```
+
+Then in your IDE: **Settings → Plugins → ⚙ → Install Plugin from Disk** and select `jetbrains/build/distributions/copy-folder-path-0.1.0.zip`.
+
+### Usage
+
+Once installed, the `📁 Copy Path` button appears in the status bar (bottom right). Click it to copy the current project's absolute path. A balloon notification confirms the copied value.
+
+The widget can be toggled via **View → Appearance → Status Bar Widgets → Copy Folder Path**.
+
+### Development
+
+```bash
+cd jetbrains
+
+# Launch a sandbox IDE with the plugin loaded
+./gradlew runIde
+
+# Build the distributable .zip
+./gradlew buildPlugin
+```
+
+The plugin sources are in `jetbrains/src/main/kotlin/com/bedong/copyfolderpath/`.
 
 ## License
 
