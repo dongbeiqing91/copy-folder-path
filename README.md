@@ -4,7 +4,7 @@ A lightweight extension/plugin that adds a status bar button for copying the cur
 
 ## Features
 
-- **Status bar button** — a `$(folder) Copy Path` item appears in the bottom-right corner of the editor window at all times.
+- **Status bar button** — a flat folder icon with a `Copy Path` label appears in the bottom-right corner of the window at all times.
 - **Single folder** — clicking the button copies the path immediately and shows a notification confirming what was copied.
 - **Multiple workspace folders** — clicking opens a QuickPick list so you can select which folder's path to copy.
 - **Hover tooltip** — hovering over the status bar item shows the path of the first workspace folder (`Copy: /absolute/path`), or `No folder open` when no folder is loaded.
@@ -36,7 +36,7 @@ cursor --install-extension copy-folder-path-0.1.0.vsix
 
 ### Usage
 
-Once installed, the `📁 Copy Path` button appears in the status bar (bottom right).
+Once installed, the `Copy Path` button (flat folder icon + label) appears in the status bar (bottom right).
 
 | Scenario | Result |
 |---|---|
@@ -83,7 +83,7 @@ Then in your IDE: **Settings → Plugins → ⚙ → Install Plugin from Disk** 
 
 ### Usage
 
-Once installed, the `📁 Copy Path` button appears in the status bar (bottom right). Click it to copy the current project's absolute path. A balloon notification confirms the copied value.
+Once installed, the `Copy Path` button (flat folder icon + label) appears in the status bar (bottom right). Click it to copy the current project's absolute path. A balloon notification confirms the copied value.
 
 The widget can be toggled via **View → Appearance → Status Bar Widgets → Copy Folder Path**.
 
